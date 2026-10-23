@@ -1,61 +1,60 @@
-# 🚀 Getting started with Strapi
+# Lost & Ground Co. — Backend
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+Backend for the Lost & Ground Co. website, developed by **Happy Beans Dev** for the CM3130 Team Project at Robert Gordon University.
 
-### `develop`
+## About the Project
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+Lost & Ground Co. is a UK sustainable skincare brand that transforms recycled coffee grounds into skincare and grooming products.
 
-```
-npm run develop
-# or
-yarn develop
-```
+The website will communicate the brand's story, sustainability values and product information.
 
-### `start`
+## Technology Stack
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+- Strapi 5 — Headless CMS and REST API
+- Node.js and TypeScript — Backend development
+- SQLite — Initial local development database
+- PostgreSQL (Supabase) — Planned production database
+- Render — Planned backend hosting
 
-```
-npm run start
-# or
-yarn start
-```
+## Main Features
 
-### `build`
+- Brand storytelling and sustainability content
+- Product and category management
+- REST API for the Vue.js frontend
+- Content editing through Strapi Admin Panel
+- API permissions and access control
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+## Local Development
 
-```
-npm run build
-# or
-yarn build
-```
+Install dependencies:
 
-## ⚙️ Deployment
+`npm install`
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+Start the development server:
 
-```
-yarn strapi deploy
-```
+`npm run develop`
 
-## 📚 Learn more
+Strapi Admin Panel: http://localhost:1337/admin
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+## Frontend
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+The Vue.js frontend is developed separately:
 
-## ✨ Community
+https://github.com/happy-beans-dev/lost-and-ground-frontend
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+Only the production build (`dist/`) will be deployed to static hosting.
 
----
+## Development Workflow
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+1. Create a feature branch.
+2. Commit and push changes.
+3. Open a Pull Request.
+4. Review changes before merging into `main`.
+
+## Security
+
+Never commit passwords, API tokens, database credentials or `.env` files.
+
+## Project Status
+
+Sprint 1 — In development.

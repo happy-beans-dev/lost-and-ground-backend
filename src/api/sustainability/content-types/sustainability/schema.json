@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sustainabilities",
+  "info": {
+    "singularName": "sustainability",
+    "pluralName": "sustainabilities",
+    "displayName": "Sustainability"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "required": true
+    },
+    "introduction": {
+      "type": "text",
+      "required": true
+    },
+    "coffeeSourcing": {
+      "type": "text"
+    },
+    "productionProcess": {
+      "type": "text"
+    },
+    "packaging": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

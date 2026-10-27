@@ -534,6 +534,44 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSustainabilitySustainability
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'sustainabilities';
+  info: {
+    displayName: 'Sustainability';
+    pluralName: 'sustainabilities';
+    singularName: 'sustainability';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    coffeeSourcing: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    introduction: Schema.Attribute.Text & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sustainability.sustainability'
+    > &
+      Schema.Attribute.Private;
+    packaging: Schema.Attribute.Text;
+    productionProcess: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1047,6 +1085,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::brand-information.brand-information': ApiBrandInformationBrandInformation;
       'api::product.product': ApiProductProduct;
+      'api::sustainability.sustainability': ApiSustainabilitySustainability;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

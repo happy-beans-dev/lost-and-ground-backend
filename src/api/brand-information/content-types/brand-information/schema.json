@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brand_informations",
+  "info": {
+    "singularName": "brand-information",
+    "pluralName": "brand-informations",
+    "displayName": "Brand Information"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brandName": {
+      "type": "string",
+      "minLength": 200,
+      "required": true
+    },
+    "heroTitle": {
+      "type": "string",
+      "maxLength": 200,
+      "required": true
+    },
+    "heroDescription": {
+      "type": "text",
+      "required": true
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "storyTitle": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "story": {
+      "type": "text",
+      "required": true
+    },
+    "storyImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "values": {
+      "type": "text"
+    }
+  }
+}

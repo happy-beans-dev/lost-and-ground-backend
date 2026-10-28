@@ -13,7 +13,7 @@
   "attributes": {
     "name": {
       "type": "string",
-      "minLength": 200,
+      "maxLength": 200,
       "required": true
     },
     "description": {
@@ -38,6 +38,10 @@
     },
     "benefits": {
       "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "required": false
     }
   }
 }

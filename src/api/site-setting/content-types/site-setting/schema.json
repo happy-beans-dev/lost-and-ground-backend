@@ -1,0 +1,65 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "Site setting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "headerText": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "footerExploreTitle": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "contactTitle": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "contactEmail": {
+      "type": "email"
+    },
+    "contactPhone": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "socialTitle": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "copyrightText": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "navigationLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "footerLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "legalLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    }
+  }
+}

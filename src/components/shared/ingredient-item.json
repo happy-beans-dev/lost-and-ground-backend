@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_ingredient_items",
+  "info": {
+    "displayName": "Ingredient Item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

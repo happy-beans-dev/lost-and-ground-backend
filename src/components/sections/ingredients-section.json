@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_ingredients_sections",
+  "info": {
+    "displayName": "Ingredients Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Items": {
+      "type": "component",
+      "component": "shared.ingredient-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

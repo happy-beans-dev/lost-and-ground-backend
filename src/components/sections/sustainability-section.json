@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_sustainability_sections",
+  "info": {
+    "displayName": "Sustainability Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

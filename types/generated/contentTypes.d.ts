@@ -490,6 +490,52 @@ export interface ApiBrandInformationBrandInformation
   };
 }
 
+export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
+  collectionName: 'homepages';
+  info: {
+    displayName: 'Homepage';
+    pluralName: 'homepages';
+    singularName: 'homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featuredProducts: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product.product'
+    >;
+    heroSection: Schema.Attribute.Component<'sections.hero', false>;
+    ingredientsSection: Schema.Attribute.Component<
+      'sections.ingredients-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage.homepage'
+    > &
+      Schema.Attribute.Private;
+    processSection: Schema.Attribute.Component<
+      'sections.process-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    shopSection: Schema.Attribute.Component<'sections.shop-section', false>;
+    storySection: Schema.Attribute.Component<'sections.story-section', false>;
+    sustainabilitySection: Schema.Attribute.Component<
+      'sections.sustainability-section',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -616,6 +662,11 @@ export interface ApiSustainabilitySustainability
     > &
       Schema.Attribute.Private;
     packaging: Schema.Attribute.Text;
+    practices: Schema.Attribute.Component<
+      'shared.sustainability-practice',
+      true
+    >;
+    processSteps: Schema.Attribute.Component<'shared.process-step', true>;
     productionProcess: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
@@ -1141,6 +1192,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::brand-information.brand-information': ApiBrandInformationBrandInformation;
+      'api::homepage.homepage': ApiHomepageHomepage;
       'api::product.product': ApiProductProduct;
       'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
       'api::sustainability.sustainability': ApiSustainabilitySustainability;

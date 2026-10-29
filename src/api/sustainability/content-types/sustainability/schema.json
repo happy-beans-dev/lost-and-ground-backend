@@ -36,6 +36,16 @@
         "images",
         "files"
       ]
+    },
+    "practices": {
+      "type": "component",
+      "component": "shared.sustainability-practice",
+      "repeatable": true
+    },
+    "processSteps": {
+      "type": "component",
+      "component": "shared.process-step",
+      "repeatable": true
     }
   }
 }

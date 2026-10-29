@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_shop_sections",
+  "info": {
+    "displayName": "Shop Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "addToBasketLabel": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "viewAllButton": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

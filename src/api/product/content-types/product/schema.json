@@ -41,6 +41,7 @@
     },
     "slug": {
       "type": "uid",
+      "targetField": "name",
       "required": false
     }
   }

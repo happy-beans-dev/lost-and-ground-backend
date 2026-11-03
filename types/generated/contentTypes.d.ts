@@ -443,99 +443,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiBrandInformationBrandInformation
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'brand_informations';
-  info: {
-    displayName: 'Brand Information';
-    pluralName: 'brand-informations';
-    singularName: 'brand-information';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    brandName: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 200;
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heroDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    heroImage: Schema.Attribute.Media<'images' | 'files'>;
-    heroTitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::brand-information.brand-information'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    story: Schema.Attribute.Text & Schema.Attribute.Required;
-    storyImage: Schema.Attribute.Media<'images' | 'files'>;
-    storyTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    values: Schema.Attribute.Text;
-  };
-}
-
-export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
-  collectionName: 'homepages';
-  info: {
-    displayName: 'Homepage';
-    pluralName: 'homepages';
-    singularName: 'homepage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    featuredProducts: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::product.product'
-    >;
-    heroSection: Schema.Attribute.Component<'sections.hero', false>;
-    ingredientsSection: Schema.Attribute.Component<
-      'sections.ingredients-section',
-      false
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homepage.homepage'
-    > &
-      Schema.Attribute.Private;
-    processSection: Schema.Attribute.Component<
-      'sections.process-section',
-      false
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    shopSection: Schema.Attribute.Component<'sections.shop-section', false>;
-    storySection: Schema.Attribute.Component<'sections.story-section', false>;
-    sustainabilitySection: Schema.Attribute.Component<
-      'sections.sustainability-section',
-      false
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -574,63 +481,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
         number
       >;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
-  collectionName: 'site_settings';
-  info: {
-    displayName: 'Site setting';
-    pluralName: 'site-settings';
-    singularName: 'site-setting';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    contactEmail: Schema.Attribute.Email;
-    contactPhone: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 30;
-      }>;
-    contactTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
-    copyrightText: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    footerExploreTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
-    footerLinks: Schema.Attribute.Component<'shared.link', true>;
-    headerText: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    legalLinks: Schema.Attribute.Component<'shared.link', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::site-setting.site-setting'
-    > &
-      Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images' | 'files'>;
-    navigationLinks: Schema.Attribute.Component<'shared.link', true>;
-    publishedAt: Schema.Attribute.DateTime;
-    socialTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
+    slug: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -662,11 +513,6 @@ export interface ApiSustainabilitySustainability
     > &
       Schema.Attribute.Private;
     packaging: Schema.Attribute.Text;
-    practices: Schema.Attribute.Component<
-      'shared.sustainability-practice',
-      true
-    >;
-    processSteps: Schema.Attribute.Component<'shared.process-step', true>;
     productionProcess: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
@@ -1191,10 +1037,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::brand-information.brand-information': ApiBrandInformationBrandInformation;
-      'api::homepage.homepage': ApiHomepageHomepage;
       'api::product.product': ApiProductProduct;
-      'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
       'api::sustainability.sustainability': ApiSustainabilitySustainability;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

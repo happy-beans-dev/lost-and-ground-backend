@@ -443,93 +443,90 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiBrandInformationBrandInformation
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'brand_informations';
+export interface ApiHeroHero extends Struct.CollectionTypeSchema {
+  collectionName: 'heroes';
   info: {
-    displayName: 'Brand Information';
-    pluralName: 'brand-informations';
-    singularName: 'brand-information';
+    displayName: 'Hero';
+    pluralName: 'heroes';
+    singularName: 'hero';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    brandName: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 200;
-      }>;
+    badges: Schema.Attribute.Component<'hero.hero-badge', false>;
+    button: Schema.Attribute.Component<'hero.hero-buttons', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    heroImage: Schema.Attribute.Media<'images' | 'files'>;
-    heroTitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::brand-information.brand-information'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::hero.hero'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    story: Schema.Attribute.Text & Schema.Attribute.Required;
-    storyImage: Schema.Attribute.Media<'images' | 'files'>;
-    storyTitle: Schema.Attribute.String &
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    values: Schema.Attribute.Text;
   };
 }
 
-export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
-  collectionName: 'homepages';
+export interface ApiIngredientIngredient extends Struct.CollectionTypeSchema {
+  collectionName: 'ingredients';
   info: {
-    displayName: 'Homepage';
-    pluralName: 'homepages';
-    singularName: 'homepage';
+    displayName: 'Ingredient';
+    pluralName: 'ingredients';
+    singularName: 'ingredient';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    cards: Schema.Attribute.Component<'ingredients.ingredient-cards', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    featuredProducts: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::product.product'
-    >;
-    heroSection: Schema.Attribute.Component<'sections.hero', false>;
-    ingredientsSection: Schema.Attribute.Component<
-      'sections.ingredients-section',
-      false
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::homepage.homepage'
+      'api::ingredient.ingredient'
     > &
       Schema.Attribute.Private;
-    processSection: Schema.Attribute.Component<
-      'sections.process-section',
-      false
-    >;
     publishedAt: Schema.Attribute.DateTime;
-    shopSection: Schema.Attribute.Component<'sections.shop-section', false>;
-    storySection: Schema.Attribute.Component<'sections.story-section', false>;
-    sustainabilitySection: Schema.Attribute.Component<
-      'sections.sustainability-section',
-      false
-    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProcessProcess extends Struct.CollectionTypeSchema {
+  collectionName: 'processes';
+  info: {
+    displayName: 'Process';
+    pluralName: 'processes';
+    singularName: 'process';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'process.process-cards', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::process.process'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -581,56 +578,53 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
-  collectionName: 'site_settings';
+export interface ApiShopShop extends Struct.CollectionTypeSchema {
+  collectionName: 'shops';
   info: {
-    displayName: 'Site setting';
-    pluralName: 'site-settings';
-    singularName: 'site-setting';
+    displayName: 'Shop';
+    pluralName: 'shops';
+    singularName: 'shop';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    contactEmail: Schema.Attribute.Email;
-    contactPhone: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 30;
-      }>;
-    contactTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
-    copyrightText: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-      }>;
+    button: Schema.Attribute.Component<'shop.shop-buttons', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    footerExploreTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
-    footerLinks: Schema.Attribute.Component<'shared.link', true>;
-    headerText: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    legalLinks: Schema.Attribute.Component<'shared.link', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::site-setting.site-setting'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::shop.shop'> &
       Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images' | 'files'>;
-    navigationLinks: Schema.Attribute.Component<'shared.link', true>;
     publishedAt: Schema.Attribute.DateTime;
-    socialTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStoryStory extends Struct.CollectionTypeSchema {
+  collectionName: 'stories';
+  info: {
+    displayName: 'Story';
+    pluralName: 'stories';
+    singularName: 'story';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'story.story-button', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::story.story'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -649,25 +643,19 @@ export interface ApiSustainabilitySustainability
     draftAndPublish: true;
   };
   attributes: {
-    coffeeSourcing: Schema.Attribute.Text;
+    cards: Schema.Attribute.Component<
+      'sustainability.sustainability-cards',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    introduction: Schema.Attribute.Text & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::sustainability.sustainability'
     > &
       Schema.Attribute.Private;
-    packaging: Schema.Attribute.Text;
-    practices: Schema.Attribute.Component<
-      'shared.sustainability-practice',
-      true
-    >;
-    processSteps: Schema.Attribute.Component<'shared.process-step', true>;
-    productionProcess: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -1191,10 +1179,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::brand-information.brand-information': ApiBrandInformationBrandInformation;
-      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::hero.hero': ApiHeroHero;
+      'api::ingredient.ingredient': ApiIngredientIngredient;
+      'api::process.process': ApiProcessProcess;
       'api::product.product': ApiProductProduct;
-      'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
+      'api::shop.shop': ApiShopShop;
+      'api::story.story': ApiStoryStory;
       'api::sustainability.sustainability': ApiSustainabilitySustainability;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

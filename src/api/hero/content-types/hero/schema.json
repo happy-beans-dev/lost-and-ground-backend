@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heroes",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heroes",
+    "displayName": "Hero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    },
+    "badges": {
+      "type": "component",
+      "component": "hero.hero-badge",
+      "repeatable": false
+    },
+    "button": {
+      "type": "component",
+      "component": "hero.hero-buttons",
+      "repeatable": false
+    }
+  }
+}

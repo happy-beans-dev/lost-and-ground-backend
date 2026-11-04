@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_hero_hero_badges",
+  "info": {
+    "displayName": "Hero Badge"
+  },
+  "options": {},
+  "attributes": {
+    "badge0": {
+      "type": "string"
+    },
+    "badge1": {
+      "type": "string"
+    },
+    "badge2": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

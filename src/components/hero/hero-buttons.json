@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_hero_hero_buttons",
+  "info": {
+    "displayName": "Hero Buttons"
+  },
+  "options": {},
+  "attributes": {
+    "shopNow": {
+      "type": "string"
+    },
+    "ourStory": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_text_cards",
+  "info": {
+    "displayName": "Text Card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

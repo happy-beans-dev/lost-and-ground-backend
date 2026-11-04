@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_process_process_cards",
+  "info": {
+    "displayName": "Process Cards"
+  },
+  "options": {},
+  "attributes": {
+    "card0": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    },
+    "card1": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    },
+    "card2": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    },
+    "card3": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

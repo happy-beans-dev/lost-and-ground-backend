@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_ingredients_ingredient_cards",
+  "info": {
+    "displayName": "Ingredient Cards"
+  },
+  "options": {},
+  "attributes": {
+    "card0": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    },
+    "card1": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    },
+    "card2": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

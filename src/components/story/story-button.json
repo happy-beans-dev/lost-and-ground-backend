@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_story_story_buttons",
+  "info": {
+    "displayName": "Story Button"
+  },
+  "options": {},
+  "attributes": {
+    "learnMore": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

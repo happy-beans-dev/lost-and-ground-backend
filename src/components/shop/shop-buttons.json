@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shop_shop_buttons",
+  "info": {
+    "displayName": "Shop Buttons"
+  },
+  "options": {},
+  "attributes": {
+    "viewAll": {
+      "type": "string"
+    },
+    "addToBasket": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

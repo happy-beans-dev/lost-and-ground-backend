@@ -1,162 +1,109 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SectionsHero extends Struct.ComponentSchema {
-  collectionName: 'components_sections_heroes';
+export interface HeroHeroBadge extends Struct.ComponentSchema {
+  collectionName: 'components_hero_hero_badges';
   info: {
-    displayName: 'Hero Section';
+    displayName: 'Hero Badge';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    primaryButton: Schema.Attribute.Component<'shared.link', false>;
-    secondaryButton: Schema.Attribute.Component<'shared.link', false>;
-    subtitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
+    badge0: Schema.Attribute.String;
+    badge1: Schema.Attribute.String;
+    badge2: Schema.Attribute.String;
   };
 }
 
-export interface SectionsIngredientsSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_ingredients_sections';
+export interface HeroHeroButtons extends Struct.ComponentSchema {
+  collectionName: 'components_hero_hero_buttons';
   info: {
-    displayName: 'Ingredients Section';
+    displayName: 'Hero Buttons';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    Items: Schema.Attribute.Component<'shared.ingredient-item', true>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
+    ourStory: Schema.Attribute.String;
+    shopNow: Schema.Attribute.String;
   };
 }
 
-export interface SectionsProcessSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_process_sections';
+export interface IngredientsIngredientCards extends Struct.ComponentSchema {
+  collectionName: 'components_ingredients_ingredient_cards';
   info: {
-    displayName: 'Process Section';
+    displayName: 'Ingredient Cards';
   };
   attributes: {
+    card0: Schema.Attribute.Component<'shared.text-card', false>;
+    card1: Schema.Attribute.Component<'shared.text-card', false>;
+    card2: Schema.Attribute.Component<'shared.text-card', false>;
+  };
+}
+
+export interface ProcessProcessCards extends Struct.ComponentSchema {
+  collectionName: 'components_process_process_cards';
+  info: {
+    displayName: 'Process Cards';
+  };
+  attributes: {
+    card0: Schema.Attribute.Component<'shared.text-card', false>;
+    card1: Schema.Attribute.Component<'shared.text-card', false>;
+    card2: Schema.Attribute.Component<'shared.text-card', false>;
+    card3: Schema.Attribute.Component<'shared.text-card', false>;
+  };
+}
+
+export interface SharedTextCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_text_cards';
+  info: {
+    displayName: 'Text Card';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
 
-export interface SectionsShopSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_shop_sections';
+export interface ShopShopButtons extends Struct.ComponentSchema {
+  collectionName: 'components_shop_shop_buttons';
   info: {
-    displayName: 'Shop Section';
+    displayName: 'Shop Buttons';
   };
   attributes: {
-    addToBasketLabel: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    viewAllButton: Schema.Attribute.Component<'shared.link', false>;
+    addToBasket: Schema.Attribute.String;
+    viewAll: Schema.Attribute.String;
   };
 }
 
-export interface SectionsStorySection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_story_sections';
+export interface StoryStoryButton extends Struct.ComponentSchema {
+  collectionName: 'components_story_story_buttons';
   info: {
-    displayName: 'Story Section';
+    displayName: 'Story Button';
   };
   attributes: {
-    button: Schema.Attribute.Component<'shared.link', false>;
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    summary: Schema.Attribute.Text;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
+    learnMore: Schema.Attribute.String;
   };
 }
 
-export interface SectionsSustainabilitySection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_sustainability_sections';
+export interface SustainabilitySustainabilityCards
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sustainability_sustainability_cards';
   info: {
-    displayName: 'Sustainability Section';
+    displayName: 'Sustainability Cards';
   };
   attributes: {
-    button: Schema.Attribute.Component<'shared.link', false>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-  };
-}
-
-export interface SharedIngredientItem extends Struct.ComponentSchema {
-  collectionName: 'components_shared_ingredient_items';
-  info: {
-    displayName: 'Ingredient Item';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    name: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
-  };
-}
-
-export interface SharedLink extends Struct.ComponentSchema {
-  collectionName: 'components_shared_links';
-  info: {
-    displayName: 'Link';
-  };
-  attributes: {
-    label: Schema.Attribute.String;
-    url: Schema.Attribute.String;
-  };
-}
-
-export interface SharedProcessStep extends Struct.ComponentSchema {
-  collectionName: 'components_shared_process_steps';
-  info: {
-    displayName: 'Process Step';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files'>;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface SharedSustainabilityPractice extends Struct.ComponentSchema {
-  collectionName: 'components_shared_sustainability_practices';
-  info: {
-    displayName: 'Sustainability Practice';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Media<'images' | 'files'>;
-    title: Schema.Attribute.String;
+    card0: Schema.Attribute.Component<'shared.text-card', false>;
+    card1: Schema.Attribute.Component<'shared.text-card', false>;
+    card2: Schema.Attribute.Component<'shared.text-card', false>;
   };
 }
 
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
-      'sections.hero': SectionsHero;
-      'sections.ingredients-section': SectionsIngredientsSection;
-      'sections.process-section': SectionsProcessSection;
-      'sections.shop-section': SectionsShopSection;
-      'sections.story-section': SectionsStorySection;
-      'sections.sustainability-section': SectionsSustainabilitySection;
-      'shared.ingredient-item': SharedIngredientItem;
-      'shared.link': SharedLink;
-      'shared.process-step': SharedProcessStep;
-      'shared.sustainability-practice': SharedSustainabilityPractice;
+      'hero.hero-badge': HeroHeroBadge;
+      'hero.hero-buttons': HeroHeroButtons;
+      'ingredients.ingredient-cards': IngredientsIngredientCards;
+      'process.process-cards': ProcessProcessCards;
+      'shared.text-card': SharedTextCard;
+      'shop.shop-buttons': ShopShopButtons;
+      'story.story-button': StoryStoryButton;
+      'sustainability.sustainability-cards': SustainabilitySustainabilityCards;
     }
   }
 }

@@ -16,36 +16,10 @@
       "maxLength": 200,
       "required": true
     },
-    "introduction": {
-      "type": "text",
-      "required": true
-    },
-    "coffeeSourcing": {
-      "type": "text"
-    },
-    "productionProcess": {
-      "type": "text"
-    },
-    "packaging": {
-      "type": "text"
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
-    "practices": {
+    "cards": {
       "type": "component",
-      "component": "shared.sustainability-practice",
-      "repeatable": true
-    },
-    "processSteps": {
-      "type": "component",
-      "component": "shared.process-step",
-      "repeatable": true
+      "component": "sustainability.sustainability-cards",
+      "repeatable": false
     }
   }
 }

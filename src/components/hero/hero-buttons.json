@@ -6,10 +6,14 @@
   "options": {},
   "attributes": {
     "shopNow": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "ourStory": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}

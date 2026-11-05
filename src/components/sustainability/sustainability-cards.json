@@ -5,20 +5,15 @@
   },
   "options": {},
   "attributes": {
-    "card0": {
-      "type": "component",
-      "component": "shared.text-card",
-      "repeatable": false
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
-    "card1": {
-      "type": "component",
-      "component": "shared.text-card",
-      "repeatable": false
-    },
-    "card2": {
-      "type": "component",
-      "component": "shared.text-card",
-      "repeatable": false
+    "text": {
+      "type": "text",
+      "maxLength": 300,
+      "required": true
     }
   },
   "config": {}

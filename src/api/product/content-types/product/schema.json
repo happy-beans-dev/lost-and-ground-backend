@@ -13,11 +13,12 @@
   "attributes": {
     "name": {
       "type": "string",
-      "maxLength": 200,
+      "maxLength": 100,
       "required": true
     },
     "description": {
       "type": "text",
+      "maxLength": 250,
       "required": true
     },
     "price": {
@@ -25,9 +26,10 @@
       "required": true,
       "min": 0
     },
-    "photos": {
+    "photo": {
       "type": "media",
       "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
@@ -42,7 +44,7 @@
     "slug": {
       "type": "uid",
       "targetField": "name",
-      "required": false
+      "required": true
     }
   }
 }

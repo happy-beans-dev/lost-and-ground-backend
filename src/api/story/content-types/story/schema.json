@@ -12,15 +12,20 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "text": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 300,
+      "required": true
     },
     "button": {
       "type": "component",
       "component": "story.story-button",
-      "repeatable": false
+      "repeatable": false,
+      "required": true
     }
   }
 }

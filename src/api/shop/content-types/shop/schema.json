@@ -12,12 +12,21 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "button": {
       "type": "component",
       "component": "shop.shop-buttons",
-      "repeatable": false
+      "repeatable": false,
+      "required": true
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "required": true
     }
   }
 }

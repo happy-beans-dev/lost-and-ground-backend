@@ -12,12 +12,16 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     },
     "cards": {
       "type": "component",
       "component": "process.process-cards",
-      "repeatable": false
+      "repeatable": true,
+      "required": true,
+      "max": 4
     }
   }
 }

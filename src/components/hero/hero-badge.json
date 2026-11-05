@@ -5,14 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "badge0": {
-      "type": "string"
-    },
-    "badge1": {
-      "type": "string"
-    },
-    "badge2": {
-      "type": "string"
+    "badges": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}

@@ -6,9 +6,11 @@ export interface HeroHeroBadge extends Struct.ComponentSchema {
     displayName: 'Hero Badge';
   };
   attributes: {
-    badge0: Schema.Attribute.String;
-    badge1: Schema.Attribute.String;
-    badge2: Schema.Attribute.String;
+    badges: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -18,8 +20,16 @@ export interface HeroHeroButtons extends Struct.ComponentSchema {
     displayName: 'Hero Buttons';
   };
   attributes: {
-    ourStory: Schema.Attribute.String;
-    shopNow: Schema.Attribute.String;
+    ourStory: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    shopNow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -29,9 +39,16 @@ export interface IngredientsIngredientCards extends Struct.ComponentSchema {
     displayName: 'Ingredient Cards';
   };
   attributes: {
-    card0: Schema.Attribute.Component<'shared.text-card', false>;
-    card1: Schema.Attribute.Component<'shared.text-card', false>;
-    card2: Schema.Attribute.Component<'shared.text-card', false>;
+    text: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -41,10 +58,16 @@ export interface ProcessProcessCards extends Struct.ComponentSchema {
     displayName: 'Process Cards';
   };
   attributes: {
-    card0: Schema.Attribute.Component<'shared.text-card', false>;
-    card1: Schema.Attribute.Component<'shared.text-card', false>;
-    card2: Schema.Attribute.Component<'shared.text-card', false>;
-    card3: Schema.Attribute.Component<'shared.text-card', false>;
+    text: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -53,10 +76,7 @@ export interface SharedTextCard extends Struct.ComponentSchema {
   info: {
     displayName: 'Text Card';
   };
-  attributes: {
-    text: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
-  };
+  attributes: {};
 }
 
 export interface ShopShopButtons extends Struct.ComponentSchema {
@@ -65,8 +85,16 @@ export interface ShopShopButtons extends Struct.ComponentSchema {
     displayName: 'Shop Buttons';
   };
   attributes: {
-    addToBasket: Schema.Attribute.String;
-    viewAll: Schema.Attribute.String;
+    addToBasket: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    viewAll: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 
@@ -87,9 +115,16 @@ export interface SustainabilitySustainabilityCards
     displayName: 'Sustainability Cards';
   };
   attributes: {
-    card0: Schema.Attribute.Component<'shared.text-card', false>;
-    card1: Schema.Attribute.Component<'shared.text-card', false>;
-    card2: Schema.Attribute.Component<'shared.text-card', false>;
+    text: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
   };
 }
 

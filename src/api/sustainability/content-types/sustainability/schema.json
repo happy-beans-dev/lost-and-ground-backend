@@ -19,7 +19,9 @@
     "cards": {
       "type": "component",
       "component": "sustainability.sustainability-cards",
-      "repeatable": false
+      "repeatable": true,
+      "required": true,
+      "max": 3
     }
   }
 }

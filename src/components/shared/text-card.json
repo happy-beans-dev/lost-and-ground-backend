@@ -4,13 +4,6 @@
     "displayName": "Text Card"
   },
   "options": {},
-  "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "text": {
-      "type": "text"
-    }
-  },
+  "attributes": {},
   "config": {}
 }

@@ -17,17 +17,22 @@
       "required": true
     },
     "text": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 200,
+      "required": true
     },
     "badges": {
       "type": "component",
       "component": "hero.hero-badge",
-      "repeatable": false
+      "repeatable": true,
+      "required": true,
+      "max": 3
     },
     "button": {
       "type": "component",
       "component": "hero.hero-buttons",
-      "repeatable": false
+      "repeatable": false,
+      "required": true
     }
   }
 }

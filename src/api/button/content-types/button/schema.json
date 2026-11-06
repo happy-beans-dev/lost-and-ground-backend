@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buttons",
+  "info": {
+    "singularName": "button",
+    "pluralName": "buttons",
+    "displayName": "Button"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Kay": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Label": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    }
+  }
+}

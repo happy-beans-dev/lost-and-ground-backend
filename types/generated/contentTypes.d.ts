@@ -443,6 +443,37 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiButtonButton extends Struct.CollectionTypeSchema {
+  collectionName: 'buttons';
+  info: {
+    displayName: 'Button';
+    pluralName: 'buttons';
+    singularName: 'button';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Kay: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    Label: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::button.button'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeroHero extends Struct.CollectionTypeSchema {
   collectionName: 'heroes';
   info: {
@@ -462,8 +493,6 @@ export interface ApiHeroHero extends Struct.CollectionTypeSchema {
         },
         number
       >;
-    button: Schema.Attribute.Component<'hero.hero-buttons', false> &
-      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -578,16 +607,22 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    benefits: Schema.Attribute.Text;
+    benefits: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 250;
+        maxLength: 200;
       }>;
-    ingredients: Schema.Attribute.Text;
+    ingredients: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -597,7 +632,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 70;
       }>;
     photo: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
@@ -628,8 +663,6 @@ export interface ApiShopShop extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    button: Schema.Attribute.Component<'shop.shop-buttons', false> &
-      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -661,8 +694,6 @@ export interface ApiStoryStory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    button: Schema.Attribute.Component<'story.story-button', false> &
-      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1241,6 +1272,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::button.button': ApiButtonButton;
       'api::hero.hero': ApiHeroHero;
       'api::ingredient.ingredient': ApiIngredientIngredient;
       'api::process.process': ApiProcessProcess;

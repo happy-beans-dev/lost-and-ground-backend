@@ -42,7 +42,7 @@ export interface IngredientsIngredientCards extends Struct.ComponentSchema {
     text: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 300;
+        maxLength: 200;
       }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -61,7 +61,7 @@ export interface ProcessProcessCards extends Struct.ComponentSchema {
     text: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 300;
+        maxLength: 250;
       }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &

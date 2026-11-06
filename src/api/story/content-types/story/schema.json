@@ -20,12 +20,6 @@
       "type": "text",
       "maxLength": 300,
       "required": true
-    },
-    "button": {
-      "type": "component",
-      "component": "story.story-button",
-      "repeatable": false,
-      "required": true
     }
   }
 }

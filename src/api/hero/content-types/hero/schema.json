@@ -27,12 +27,6 @@
       "repeatable": true,
       "required": true,
       "max": 3
-    },
-    "button": {
-      "type": "component",
-      "component": "hero.hero-buttons",
-      "repeatable": false,
-      "required": true
     }
   }
 }

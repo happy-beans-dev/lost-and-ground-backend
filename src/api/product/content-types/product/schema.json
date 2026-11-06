@@ -13,12 +13,12 @@
   "attributes": {
     "name": {
       "type": "string",
-      "maxLength": 100,
+      "maxLength": 70,
       "required": true
     },
     "description": {
       "type": "text",
-      "maxLength": 250,
+      "maxLength": 200,
       "required": true
     },
     "price": {
@@ -36,10 +36,13 @@
       ]
     },
     "ingredients": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 200,
+      "required": false
     },
     "benefits": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 200
     },
     "slug": {
       "type": "uid",

@@ -1,5 +1,29 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactContactButton extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_buttons';
+  info: {
+    displayName: 'contact button';
+  };
+  attributes: {
+    send: Schema.Attribute.String;
+  };
+}
+
+export interface ContactContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_forms';
+  info: {
+    displayName: 'contact form';
+  };
+  attributes: {
+    emailLabel: Schema.Attribute.String;
+    messageLabel: Schema.Attribute.String;
+    nameLabel: Schema.Attribute.String;
+    orderNumberLabel: Schema.Attribute.String;
+    subjectLabel: Schema.Attribute.String;
+  };
+}
+
 export interface HeroHeroBadge extends Struct.ComponentSchema {
   collectionName: 'components_hero_hero_badges';
   info: {
@@ -131,6 +155,8 @@ export interface SustainabilitySustainabilityCards
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
+      'contact.contact-button': ContactContactButton;
+      'contact.contact-form': ContactContactForm;
       'hero.hero-badge': HeroHeroBadge;
       'hero.hero-buttons': HeroHeroButtons;
       'ingredients.ingredient-cards': IngredientsIngredientCards;

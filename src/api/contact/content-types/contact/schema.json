@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "form": {
+      "type": "component",
+      "component": "contact.contact-form",
+      "repeatable": false
+    },
+    "button": {
+      "type": "component",
+      "component": "contact.contact-button",
+      "repeatable": false
+    }
+  }
+}

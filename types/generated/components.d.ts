@@ -76,6 +76,17 @@ export interface IngredientsIngredientCards extends Struct.ComponentSchema {
   };
 }
 
+export interface LegalPolicyBlock extends Struct.ComponentSchema {
+  collectionName: 'components_legal_policy_blocks';
+  info: {
+    displayName: 'Policy Block';
+  };
+  attributes: {
+    body: Schema.Attribute.Text & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ProcessProcessCards extends Struct.ComponentSchema {
   collectionName: 'components_process_process_cards';
   info: {
@@ -160,6 +171,7 @@ declare module '@strapi/strapi' {
       'hero.hero-badge': HeroHeroBadge;
       'hero.hero-buttons': HeroHeroButtons;
       'ingredients.ingredient-cards': IngredientsIngredientCards;
+      'legal.policy-block': LegalPolicyBlock;
       'process.process-cards': ProcessProcessCards;
       'shared.text-card': SharedTextCard;
       'shop.shop-buttons': ShopShopButtons;

@@ -24,11 +24,6 @@
       "type": "component",
       "component": "contact.contact-form",
       "repeatable": false
-    },
-    "button": {
-      "type": "component",
-      "component": "contact.contact-button",
-      "repeatable": false
     }
   }
 }

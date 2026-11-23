@@ -11,19 +11,19 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "text": {
-      "type": "text"
-    },
     "email": {
       "type": "email"
     },
-    "form": {
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "socialLinks": {
       "type": "component",
-      "component": "contact.contact-form",
-      "repeatable": false
+      "component": "contact.social-link",
+      "repeatable": true
     }
   }
 }

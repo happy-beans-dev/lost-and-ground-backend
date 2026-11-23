@@ -24,6 +24,17 @@ export interface ContactContactForm extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_contact_social_links';
+  info: {
+    displayName: 'socialLink';
+  };
+  attributes: {
+    platform: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface HeroHeroBadge extends Struct.ComponentSchema {
   collectionName: 'components_hero_hero_badges';
   info: {
@@ -111,7 +122,10 @@ export interface SharedTextCard extends Struct.ComponentSchema {
   info: {
     displayName: 'Text Card';
   };
-  attributes: {};
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface ShopShopButtons extends Struct.ComponentSchema {
@@ -168,6 +182,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'contact.contact-button': ContactContactButton;
       'contact.contact-form': ContactContactForm;
+      'contact.social-link': ContactSocialLink;
       'hero.hero-badge': HeroHeroBadge;
       'hero.hero-buttons': HeroHeroButtons;
       'ingredients.ingredient-cards': IngredientsIngredientCards;

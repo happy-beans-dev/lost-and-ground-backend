@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About Us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section0": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    },
+    "section1": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    },
+    "section2": {
+      "type": "component",
+      "component": "shared.text-card",
+      "repeatable": false
+    }
+  }
+}

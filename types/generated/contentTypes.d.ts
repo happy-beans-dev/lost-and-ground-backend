@@ -636,35 +636,8 @@ export interface ApiLegalLegal extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::legal.legal'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPrivacyPolicyPrivacyPolicy
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'privacy_policies';
-  info: {
-    displayName: 'Privacy Policy';
-    pluralName: 'privacy-policies';
-    singularName: 'privacy-policy';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::privacy-policy.privacy-policy'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -761,6 +734,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    stockQuantity: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1394,7 +1368,6 @@ declare module '@strapi/strapi' {
       'api::hero.hero': ApiHeroHero;
       'api::ingredient.ingredient': ApiIngredientIngredient;
       'api::legal.legal': ApiLegalLegal;
-      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::process.process': ApiProcessProcess;
       'api::product.product': ApiProductProduct;
       'api::shop.shop': ApiShopShop;

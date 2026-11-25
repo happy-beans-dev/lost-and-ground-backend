@@ -51,6 +51,10 @@
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "stockQuantity": {
+      "type": "integer",
+      "default": 0
     }
   }
 }

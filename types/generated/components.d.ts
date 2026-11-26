@@ -93,8 +93,8 @@ export interface LegalPolicyBlock extends Struct.ComponentSchema {
     displayName: 'Policy Block';
   };
   attributes: {
-    body: Schema.Attribute.Text & Schema.Attribute.Required;
-    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    body: Schema.Attribute.RichText & Schema.Attribute.Required;
+    heading: Schema.Attribute.String;
   };
 }
 

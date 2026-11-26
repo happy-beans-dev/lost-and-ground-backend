@@ -7,10 +7,10 @@
   "attributes": {
     "heading": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "body": {
-      "type": "text",
+      "type": "richtext",
       "required": true
     }
   },
